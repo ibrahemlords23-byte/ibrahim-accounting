@@ -78,6 +78,15 @@ export default defineConfig({
     dedupe: ['react', 'react-dom'],
   },
   clearScreen: false,
+  ssr: {
+    noExternal: [],
+    external: ['jsonwebtoken', 'argon2'],
+  },
+  build: {
+    rollupOptions: {
+      external: ['jsonwebtoken', 'argon2'],
+    },
+  },
   server: {
     allowedHosts: true,
     host: '0.0.0.0',
