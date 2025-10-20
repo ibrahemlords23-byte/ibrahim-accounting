@@ -1,0 +1,29 @@
+{
+  "name": "ibrahim-accounting-system",
+  "version": "1.0.0",
+  "description": "نظام إبراهيم للمحاسبة - نظام محاسبة شامل مع دعم متعدد العملات والمتاجر",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "cd apps/web && npm run dev",
+    "build": "cd apps/web && npm install && npm run build",
+    "start": "cd apps/web && npm start",
+    "deploy": "netlify deploy --prod"
+  },
+  "keywords": [
+    "accounting",
+    "محاسبة",
+    "multi-tenant",
+    "multi-currency",
+    "inventory",
+    "payroll"
+  ],
+  "author": "Ibrahim Accounting System",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
+
