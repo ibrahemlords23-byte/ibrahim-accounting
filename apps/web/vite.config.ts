@@ -38,6 +38,7 @@ export default defineConfig({
     reactRouterHonoServer({
       serverEntryPoint: './__create/index.ts',
       runtime: 'node',
+      external: ['jsonwebtoken', 'argon2', '@neondatabase/serverless'],
     }),
     babel({
       include: ['src/**/*.{js,jsx,ts,tsx}'], // or RegExp: /src\/.*\.[tj]sx?$/
@@ -80,10 +81,11 @@ export default defineConfig({
   clearScreen: false,
   ssr: {
     noExternal: true,
+    external: ['jsonwebtoken', 'argon2', '@neondatabase/serverless'],
   },
   build: {
-    commonjsOptions: {
-      include: [/node_modules/],
+    rollupOptions: {
+      external: ['jsonwebtoken', 'argon2', '@neondatabase/serverless'],
     },
   },
   server: {
