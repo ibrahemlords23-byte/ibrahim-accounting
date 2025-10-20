@@ -1,0 +1,17 @@
+[build]
+  base = "apps/web"
+  command = "npm install --legacy-peer-deps && NODE_ENV=production npm run build && cp build-package.json build/server/package.json && cd build/server && npm install"
+  publish = "build/client"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[functions]
+  directory = "build/server"
+  node_bundler = "esbuild"
+

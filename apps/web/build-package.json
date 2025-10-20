@@ -1,0 +1,9 @@
+{
+  "type": "module",
+  "dependencies": {
+    "jsonwebtoken": "^9.0.2",
+    "argon2": "^0.43.0",
+    "@neondatabase/serverless": "^0.10.4"
+  }
+}
+
