@@ -79,12 +79,11 @@ export default defineConfig({
   },
   clearScreen: false,
   ssr: {
-    noExternal: [],
-    external: ['jsonwebtoken', 'argon2'],
+    noExternal: true,
   },
   build: {
-    rollupOptions: {
-      external: ['jsonwebtoken', 'argon2'],
+    commonjsOptions: {
+      include: [/node_modules/],
     },
   },
   server: {
