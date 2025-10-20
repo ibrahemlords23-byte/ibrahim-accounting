@@ -29,6 +29,9 @@ export default defineConfig({
       '@auth/core/errors',
       'fsevents',
       'lightningcss',
+      'jsonwebtoken',
+      'argon2',
+      '@neondatabase/serverless',
     ],
   },
   logLevel: 'info',
@@ -80,12 +83,14 @@ export default defineConfig({
   },
   clearScreen: false,
   ssr: {
-    noExternal: true,
-    external: ['jsonwebtoken', 'argon2', '@neondatabase/serverless'],
+    noExternal: false,
+    external: ['jsonwebtoken', 'argon2', '@neondatabase/serverless', 'ws'],
   },
   build: {
     rollupOptions: {
-      external: ['jsonwebtoken', 'argon2', '@neondatabase/serverless'],
+      external: (id) => {
+        return ['jsonwebtoken', 'argon2', '@neondatabase/serverless', 'ws'].some(ext => id === ext || id.startsWith(ext + '/'));
+      },
     },
   },
   server: {
