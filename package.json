@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "نظام إبراهيم للمحاسبة - نظام محاسبة شامل مع دعم متعدد العملات والمتاجر",
   "private": true,
-  "workspaces": [
-    "apps/*"
-  ],
   "scripts": {
     "dev": "cd apps/web && npm run dev",
     "build": "cd apps/web && npm install && npm run build",
